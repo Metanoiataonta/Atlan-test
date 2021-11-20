@@ -130,6 +130,8 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components'),
             '@public': path.resolve(__dirname, 'public'),
             'vue$': 'vue/dist/vue.esm.js',
+            '@layouts': path.resolve(__dirname, 'src/layouts'),
+            '@ui-components': path.resolve(__dirname, 'src/components/ui-components'),
         },
     },
     devtool: isDev ? 'source-map' : 'nosources-source-map',

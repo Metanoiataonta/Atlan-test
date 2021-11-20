@@ -1,29 +1,25 @@
 @import "~normalize.css";
 
-body {
-  background-color: #234;
-  color: white;
-  padding: 100px;
-
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+  max-width: 1100px;
 }
 
-h1, h2, h3, h4 {
-  //font-size: 2em;
+h1, p {
   margin: 0;
 }
 
 button {
-  font-size: 1em;
-  background-color: #fff;
-  border-radius: 10px;
   padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(#747474, 0.9);
   cursor: pointer;
-}
+  color: #fff;
 
-@media screen and (max-width: 1000px) {
-  body {
-    padding: 5px;
-    //font-size: 40px;
+  &:not(:last-of-type) {
+    margin-right: 10px;
   }
-
 }
