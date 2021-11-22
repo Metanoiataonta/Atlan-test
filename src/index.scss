@@ -15,9 +15,19 @@ h1, p {
 button {
   padding: 5px 10px;
   border-radius: 10px;
-  background-color: rgba(#747474, 0.9);
+  background-color: #2974ff;
   cursor: pointer;
   color: #fff;
+  text-shadow: #000 1px 1px;
+  border: 2px solid #fff;
+  box-shadow: 2px 3px 1px #2974ff;
+
+  &:active {
+    position: relative;
+    top: 2px;
+    left: 3px;
+    box-shadow: none;
+  }
 
   &:not(:last-of-type) {
     margin-right: 10px;

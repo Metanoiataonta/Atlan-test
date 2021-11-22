@@ -9,16 +9,19 @@
         {{ tab }}
       </button>
     </div>
-    <main-document-cmp />
+    <main-document-cmp v-show="false" />
+    <table-document-cmp />
   </div>
 </template>
 <script>
 import MainDocument from '@components/MainDocument/MainDocument.vue';
+import TableDocument from '@components/TableDocument/TableDocument.vue';
 
 export default {
     name: 'DocumentTabs',
     components: {
         'main-document-cmp': MainDocument,
+        'table-document-cmp': TableDocument,
     },
     data() {
         return {
@@ -29,5 +32,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.tabs {
+  &__selectors {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+  }
+}
 </style>
