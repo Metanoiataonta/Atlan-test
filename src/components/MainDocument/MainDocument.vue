@@ -41,13 +41,15 @@ export default {
         totalPrice() {
             const nestedPrice = this.nested.map((item) => parseFloat(item.price));
 
-            return nestedPrice.reduce((prev, cur) => prev + cur).toFixed(2);
+            return [...nestedPrice, 0].reduce((prev, cur) => prev + cur).toFixed(2);
         },
+
     },
     methods: {
         addNewNested() {
             this.$store.commit('addNewNested');
         },
+
     },
 };
 </script>
@@ -55,6 +57,8 @@ export default {
 <style lang="scss" scoped>
 .main-document {
   padding: 20px 50px;
+  background-color: rgba(96, 94, 94, 0.68);
+
 
   &__total-price {
     padding: 10px 20px

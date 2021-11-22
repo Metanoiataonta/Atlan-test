@@ -6,11 +6,12 @@
       :key="name"
       class="nested__label"
     >
-      {{ name }} <span v-if="showError">Error</span>
+      {{ name }} <span v-if="errorObj[name]"> {{ errorText[name] }}</span>
       <input
         v-model="itemWithoutID[name]"
         :type="name === 'title' || name ==='price' ? 'text' : 'number' "
         class="nested__input"
+        :class="errorObj[name] ? 'nested__input_error' : ''"
         :name="name"
         @input="onChange"
       >
@@ -18,7 +19,7 @@
 
     <button
       class="nested__close"
-      @click="deleteNested"
+      @click="deleteNested(itemID)"
     >
       <svg
         id="Layer_1"
@@ -53,9 +54,18 @@ export default {
             default: NaN,
         },
     },
+    emits: ['delete'],
     data() {
         return {
-            showError: false,
+
+            errorObj: {
+                title: false,
+                price: false,
+            },
+            errorText: {
+                title: 'Enter anything other than a space',
+                price: 'The price is not correct. There should be no more than 2 decimal places. Example "12.34"',
+            },
         };
     },
     computed: {
@@ -69,21 +79,27 @@ export default {
             return object;
         },
     },
+    mounted() {
+        this.checkValue(this.item.title, /\S/i, 'title');
+        this.checkValue(this.item.price, /^\d+\.?\d{0,2}$/i, 'price');
+    },
     methods: {
         deleteNested() {
-            this.$store.commit('deleteDocData', this.itemID);
+            if (this.$store.state.doc.doc.nested.length > 0) {
+                this.$store.commit('deleteDocData', this.itemID);
+            }
         },
-        checkValue(value, exp) {
-            this.showError = !exp.test(value);
+        checkValue(value, exp, key) {
+            this.errorObj[key] = !exp.test(value);
         },
         onChange(e) {
             const target = e.target;
             switch (target.name) {
             case 'title':
-                this.checkValue(target.value, /\S/i);
+                this.checkValue(target.value, /\S/i, 'title');
                 break;
             case 'price':
-                this.checkValue(target.value, /^\d+\.?\d{0,2}$/i);
+                this.checkValue(target.value, /^\d+\.?\d{0,2}$/i, 'price');
                 break;
             }
             if (!this.showError) {
@@ -108,9 +124,20 @@ export default {
   grid-template-columns: repeat(2, 1fr);
 
   &__label {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    span {
+      position: absolute;
+      right: 5%;
+      max-width: 30%;
+      background-color: rgba(#000, 0.7);
+      border-radius: 10px;
+      padding: 5px;
+      z-index: 1;
+    }
   }
 
   &__close {
@@ -119,6 +146,7 @@ export default {
     right: 0px;
     background-color: transparent;
     border: none;
+    box-shadow: none;
 
     svg {
       width: 24px;
@@ -129,8 +157,24 @@ export default {
       fill: rgba(180, 179, 179, 0.98);
     }
 
-    &:active svg {
-      fill: #5b5b5b;
+    &:active {
+      top: 0;
+      left: unset;
+      right: 0;
+
+
+      svg {
+        fill: #5b5b5b;
+
+      }
+    }
+
+
+  }
+
+  &__input {
+    &_error, {
+      border: 4px solid red;
     }
 
 

@@ -1,5 +1,8 @@
 @import "~normalize.css";
 
+$contextColor: #2974ff;
+$textColor: #fff;
+$bgColor: #000;
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -15,12 +18,14 @@ h1, p {
 button {
   padding: 5px 10px;
   border-radius: 10px;
-  background-color: #2974ff;
+  background-color: $contextColor;
   cursor: pointer;
-  color: #fff;
+  color: $textColor;
   text-shadow: #000 1px 1px;
-  border: 2px solid #fff;
-  box-shadow: 2px 3px 1px #2974ff;
+  border: 2px solid $textColor;
+  box-shadow: 2px 3px 1px $contextColor, 6px 7px 8px rgb(0 0 0 / 70%);
+  transition: all 100ms;
+
 
   &:active {
     position: relative;
@@ -31,5 +36,13 @@ button {
 
   &:not(:last-of-type) {
     margin-right: 10px;
+  }
+
+  &[disabled] {
+    position: relative;
+    top: 2px;
+    left: 3px;
+    box-shadow: none;
+    background-color: #605e5e;
   }
 }

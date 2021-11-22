@@ -3,12 +3,14 @@
     <button
       class="control-document__button"
       :disabled="disabled"
+      @click="saveDocument"
     >
       Save
     </button>
     <button
       class="control-document__button"
       :disabled="disabled"
+      @click="deleteDocument"
     >
       Delete
     </button>
@@ -19,7 +21,16 @@ export default {
     name: 'ControlDocument',
     computed: {
         disabled() {
-            return this.$store.state.controlEnabled;
+            return !this.$store.state.form.controlEnabled;
+        },
+    },
+    methods: {
+        deleteDocument() {
+            this.$store.commit('toggleModal');
+        },
+        saveDocument() {
+            this.$store.commit('toggleControl');
+            this.$store.commit('dataComparison');
         },
     },
 };

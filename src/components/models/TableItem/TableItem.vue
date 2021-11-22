@@ -7,12 +7,16 @@
     {{ itemKey === 'start' ? new Date(prop * 1000).toDateString() : prop }}
     <input
       v-if="itemKey === 'period'"
-      v-model="checked"
+      :checked="checked"
       type="checkbox"
+      :name="itemKey"
+      @change="checkChange"
     >
   </div>
 </template>
 <script>
+import {mapState} from 'vuex';
+
 export default {
     name: 'TableItem',
     props: {
@@ -32,6 +36,12 @@ export default {
     computed: {},
     mounted() {
 
+    },
+    methods: {
+        checkChange(event) {
+            (event.target.checked);
+            this.$store.commit('checkBox', this.prop);
+        },
     },
 };
 </script>
