@@ -87,6 +87,7 @@ export default {
     state: {
         doc,
         docBackUp: doc,
+        changes: {},
     },
     getters: {
         getDocStatus(state) {
@@ -102,9 +103,23 @@ export default {
     mutations: {
         setDocData(state, data) {
             state.doc.nested[data.id][data.prop] = data.value;
+            if (!state.changes.nested) {
+                state.changes.nested = [];
+            }
+            if (!state.changes.nested[data.id]) {
+                state.changes.nested[data.id] = {
+                    [data.prop]: data.value,
+                };
+            }
+
+            state.doc.nested[data.id][data.prop] = data.value;
         },
         deleteDocData(state, id) {
             state.doc.nested.splice(id, 1);
+            if (!state.changes.nested) {
+                state.changes.nested = [];
+            }
+            state.changes.nested.push({id, deleted: true});
         },
         addNewNested(state) {
             let maxID = 0;

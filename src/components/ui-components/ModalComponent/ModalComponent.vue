@@ -1,6 +1,12 @@
 <template>
-  <div class="modal">
-    <div class="modal__wrapper">
+  <div
+    class="modal"
+    @click.self="closeModal"
+  >
+    <div
+      ref="modalWrapper"
+      class="modal__wrapper"
+    >
       <div class="modal__text">
         Are you sure?
       </div>
@@ -21,9 +27,13 @@
 <script>
 export default {
     name: 'ModalComponent',
+
     methods: {
         closeModal() {
             this.$store.commit('toggleModal');
+        },
+        handleOutsideClick(e) {
+
         },
     },
 };
