@@ -86,7 +86,9 @@ const doc = {
 export default {
     state: {
         doc,
-        docBackUp: doc,
+        docBackUp: JSON.parse(JSON.stringify(doc)),
+
+        maxNestedID: undefined,
     },
     getters: {
         getDocStatus(state) {
@@ -102,14 +104,20 @@ export default {
     mutations: {
         setDocData(state, data) {
             state.doc.nested[data.id][data.prop] = data.value;
+
+
+            state.doc.nested[data.id][data.prop] = data.value;
         },
         deleteDocData(state, id) {
             state.doc.nested.splice(id, 1);
         },
         addNewNested(state) {
-            let maxID = 0;
-            maxID = Math.max(...state.doc.nested.map((item) => item.id), 0) + 1;
-            state.doc.nested.push({id: maxID, title: `Nested ${maxID}`, price: 0});
+            if (!state.maxNestedID) {
+                state.maxNestedID = Math.max(...state.doc.nested.map((item) => item.id), 0) + 1;
+            }
+            state.doc.nested.push({id: state.maxNestedID, title: `Nested ${state.maxNestedID}`, price: 0});
+
+            state.maxNestedID++;
         },
         checkBox(state, period) {
             const tableItemIndex = state.doc.table.findIndex((item) => {
@@ -119,30 +127,61 @@ export default {
             state.doc.table[tableItemIndex].check = !state.doc.table[tableItemIndex].check;
         },
         dataComparison(state) {
+            state.changes = undefined;
             const current = state.doc;
             const previous = state.docBackUp;
-
-            const dataChanges = (curr, prev) => {
+            const tableDataChanges = (curr, prev) => {
                 const data = [];
-                // eslint-disable-next-line guard-for-in
-                for (const i in curr) {
-                    for (const k in prev) {
-                        if (!i.isArray) {
-                            console.log('not object and array');
-                            if (curr[i] === prev[k]) {
-                                console.log('compared');
-                            } else {
-                                console.log('not compared');
-                            }
-                            ;
-                        }
+                curr.sort((a, b) => a.period - b.period);
+                prev.sort((a, b) => a.period - b.period);
+                for (let i = 0; i < curr.length; i++) {
+                    if (curr[i].check !== prev[i].check) {
+                        data.push({id: curr[i].id, check: curr[i].check});
                     }
-                    data.push(i);
                 }
-                return [data, prev];
+                return data;
             };
 
-            console.log(dataChanges(current, previous));
+            const nestedDataChanges = (curr, prev) => {
+                const currentArray = [...curr];
+                const prevArray = [...prev];
+                const changes = [];
+                const commonIndexCurrent = [];
+
+                prevArray.forEach((item, prevIndex) => {
+                    const currIndex = currentArray.findIndex((el) => el.id === item.id);
+                    if (currIndex !== -1) {
+                        // eslint-disable-next-line guard-for-in
+                        for (const value in item) {
+                            if (item[value] !== currentArray[currIndex][value]) {
+                                if (!changes[item.id - 1]) {
+                                    changes[item.id - 1] = {};
+                                }
+                                changes[item.id - 1][value] = currentArray[currIndex][value];
+                            }
+                        }
+                        commonIndexCurrent.push(currIndex);
+                    } else {
+                        changes[item.id - 1] = {
+                            id: item.id,
+                            deleted: true,
+                        };
+                    }
+                });
+                for (let i = 0; i < currentArray.length; i++) {
+                    const isCommon = commonIndexCurrent.includes(i);
+                    if (!isCommon) {
+                        changes[currentArray[i].id - 1] = currentArray[i];
+                    }
+                }
+                console.log(commonIndexCurrent);
+                return changes;
+            };
+
+            state.changes = {
+                table: tableDataChanges(current.table, previous.table),
+                nested: nestedDataChanges(current.nested, previous.nested),
+            };
         },
 
     },

@@ -1,0 +1,443 @@
+/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */
+
+/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */
+
+/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ControlDocument.vue?vue&type=script&lang=js& */
+
+/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainNested.vue?vue&type=script&lang=js& */
+
+/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalComponent.vue?vue&type=script&lang=js& */
+
+/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableItem.vue?vue&type=script&lang=js& */
+
+/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ControlDocument.vue?vue&type=style&index=0&id=bd95f63c&lang=scss&scoped=true& */
+
+/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainNested.vue?vue&type=style&index=0&id=f6a691b6&lang=scss&scoped=true& */
+
+/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalComponent.vue?vue&type=style&index=0&id=5b78fd1e&lang=scss&scoped=true& */
+
+/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ControlDocument.vue?vue&type=template&id=bd95f63c&scoped=true& */
+
+/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainNested.vue?vue&type=template&id=f6a691b6&scoped=true& */
+
+/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalComponent.vue?vue&type=template&id=5b78fd1e&scoped=true& */
+
+/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableItem.vue?vue&type=template&id=74d1c23d&scoped=true& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DocumentEditor.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Header.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainDocument.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableDocument.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tabs.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Title.vue?vue&type=script&lang=js& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DocumentEditor.vue?vue&type=style&index=0&id=032c40f1&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Header.vue?vue&type=style&index=0&id=5e58b760&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainDocument.vue?vue&type=style&index=0&id=03287618&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableDocument.vue?vue&type=style&index=0&id=7a69891a&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tabs.vue?vue&type=style&index=0&id=1820a9a3&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Title.vue?vue&type=style&index=0&id=1e506a24&lang=scss&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DocumentEditor.vue?vue&type=template&id=032c40f1&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Header.vue?vue&type=template&id=5e58b760&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MainDocument.vue?vue&type=template&id=03287618&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableDocument.vue?vue&type=template&id=7a69891a&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tabs.vue?vue&type=template&id=1820a9a3&scoped=true& */
+
+/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Title.vue?vue&type=template&id=1e506a24&scoped=true& */
+
+/*! ./ControlDocument.vue?vue&type=script&lang=js& */
+
+/*! ./ControlDocument.vue?vue&type=style&index=0&id=bd95f63c&lang=scss&scoped=true& */
+
+/*! ./ControlDocument.vue?vue&type=template&id=bd95f63c&scoped=true& */
+
+/*! ./DocumentEditor.vue?vue&type=script&lang=js& */
+
+/*! ./DocumentEditor.vue?vue&type=style&index=0&id=032c40f1&lang=scss&scoped=true& */
+
+/*! ./DocumentEditor.vue?vue&type=template&id=032c40f1&scoped=true& */
+
+/*! ./Header.vue?vue&type=script&lang=js& */
+
+/*! ./Header.vue?vue&type=style&index=0&id=5e58b760&lang=scss&scoped=true& */
+
+/*! ./Header.vue?vue&type=template&id=5e58b760&scoped=true& */
+
+/*! ./MainDocument.vue?vue&type=script&lang=js& */
+
+/*! ./MainDocument.vue?vue&type=style&index=0&id=03287618&lang=scss&scoped=true& */
+
+/*! ./MainDocument.vue?vue&type=template&id=03287618&scoped=true& */
+
+/*! ./MainNested.vue?vue&type=script&lang=js& */
+
+/*! ./MainNested.vue?vue&type=style&index=0&id=f6a691b6&lang=scss&scoped=true& */
+
+/*! ./MainNested.vue?vue&type=template&id=f6a691b6&scoped=true& */
+
+/*! ./ModalComponent.vue?vue&type=script&lang=js& */
+
+/*! ./ModalComponent.vue?vue&type=style&index=0&id=5b78fd1e&lang=scss&scoped=true& */
+
+/*! ./ModalComponent.vue?vue&type=template&id=5b78fd1e&scoped=true& */
+
+/*! ./TableDocument.vue?vue&type=script&lang=js& */
+
+/*! ./TableDocument.vue?vue&type=style&index=0&id=7a69891a&lang=scss&scoped=true& */
+
+/*! ./TableDocument.vue?vue&type=template&id=7a69891a&scoped=true& */
+
+/*! ./TableItem.vue?vue&type=script&lang=js& */
+
+/*! ./TableItem.vue?vue&type=template&id=74d1c23d&scoped=true& */
+
+/*! ./Tabs.vue?vue&type=script&lang=js& */
+
+/*! ./Tabs.vue?vue&type=style&index=0&id=1820a9a3&lang=scss&scoped=true& */
+
+/*! ./Tabs.vue?vue&type=template&id=1820a9a3&scoped=true& */
+
+/*! ./Title.vue?vue&type=script&lang=js& */
+
+/*! ./Title.vue?vue&type=style&index=0&id=1e506a24&lang=scss&scoped=true& */
+
+/*! ./Title.vue?vue&type=template&id=1e506a24&scoped=true& */
+
+/*! ./modules/doc */
+
+/*! @components/MainDocument/MainDocument.vue */
+
+/*! @components/TableDocument/TableDocument.vue */
+
+/*! @components/Tabs/Tabs.vue */
+
+/*! @components/Title/Title.vue */
+
+/*! @components/models/MainNested/MainNested.vue */
+
+/*! @components/models/TableItem/TableItem.vue */
+
+/*! @layouts/DocumentEditor/DocumentEditor.vue */
+
+/*! @layouts/Header/Header.vue */
+
+/*! @src/index.scss */
+
+/*! @src/store/Store */
+
+/*! @src/store/modules/form */
+
+/*! @ui-components/ControlDocument/ControlDocument.vue */
+
+/*! @ui-components/ModalComponent/ModalComponent.vue */
+
+/*! vue */
+
+/*! vuex */
+
+/*!*****************!*\
+  !*** ./main.js ***!
+  \*****************/
+
+/*!********************!*\
+  !*** ./index.scss ***!
+  \********************/
+
+/*!************************!*\
+  !*** ./store/Store.js ***!
+  \************************/
+
+/*!******************************!*\
+  !*** ./store/modules/doc.js ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./store/modules/form.js ***!
+  \*******************************/
+
+/*!**********************************!*\
+  !*** ./components/Tabs/Tabs.vue ***!
+  \**********************************/
+
+/*!***********************************!*\
+  !*** ./layouts/Header/Header.vue ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./components/Title/Title.vue ***!
+  \************************************/
+
+/*!**************************************************!*\
+  !*** ./components/MainDocument/MainDocument.vue ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ./components/models/TableItem/TableItem.vue ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./layouts/DocumentEditor/DocumentEditor.vue ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./components/TableDocument/TableDocument.vue ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./components/models/MainNested/MainNested.vue ***!
+  \*****************************************************/
+
+/*!***********************************************************!*\
+  !*** ./components/Tabs/Tabs.vue?vue&type=script&lang=js& ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ./layouts/Header/Header.vue?vue&type=script&lang=js& ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./components/Title/Title.vue?vue&type=script&lang=js& ***!
+  \*************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./components/ui-components/ModalComponent/ModalComponent.vue ***!
+  \********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./components/ui-components/ControlDocument/ControlDocument.vue ***!
+  \**********************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./components/MainDocument/MainDocument.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./components/models/TableItem/TableItem.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./layouts/DocumentEditor/DocumentEditor.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./components/TableDocument/TableDocument.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./components/Tabs/Tabs.vue?vue&type=template&id=1820a9a3&scoped=true& ***!
+  \*****************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./components/models/MainNested/MainNested.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./layouts/Header/Header.vue?vue&type=template&id=5e58b760&scoped=true& ***!
+  \******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./components/Title/Title.vue?vue&type=template&id=1e506a24&scoped=true& ***!
+  \*******************************************************************************/
+
+/*!********************************************************************************************!*\
+  !*** ./components/Tabs/Tabs.vue?vue&type=style&index=0&id=1820a9a3&lang=scss&scoped=true& ***!
+  \********************************************************************************************/
+
+/*!*********************************************************************************************!*\
+  !*** ./components/MainDocument/MainDocument.vue?vue&type=template&id=03287618&scoped=true& ***!
+  \*********************************************************************************************/
+
+/*!*********************************************************************************************!*\
+  !*** ./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+
+/*!*********************************************************************************************!*\
+  !*** ./layouts/Header/Header.vue?vue&type=style&index=0&id=5e58b760&lang=scss&scoped=true& ***!
+  \*********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./components/Title/Title.vue?vue&type=style&index=0&id=1e506a24&lang=scss&scoped=true& ***!
+  \**********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./components/models/TableItem/TableItem.vue?vue&type=template&id=74d1c23d&scoped=true& ***!
+  \**********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./layouts/DocumentEditor/DocumentEditor.vue?vue&type=template&id=032c40f1&scoped=true& ***!
+  \**********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+  !*** ./components/TableDocument/TableDocument.vue?vue&type=template&id=7a69891a&scoped=true& ***!
+  \***********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+  !*** ./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+
+/*!************************************************************************************************!*\
+  !*** ./components/models/MainNested/MainNested.vue?vue&type=template&id=f6a691b6&scoped=true& ***!
+  \************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** ./components/MainDocument/MainDocument.vue?vue&type=style&index=0&id=03287618&lang=scss&scoped=true& ***!
+  \************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** ./layouts/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&id=032c40f1&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** ./components/TableDocument/TableDocument.vue?vue&type=style&index=0&id=7a69891a&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** ./components/models/MainNested/MainNested.vue?vue&type=style&index=0&id=f6a691b6&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** ./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=template&id=5b78fd1e&scoped=true& ***!
+  \***************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** ./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=template&id=bd95f63c&scoped=true& ***!
+  \*****************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+  !*** ./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=style&index=0&id=5b78fd1e&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************/
+
+/*!********************************************************************************************************************************!*\
+  !*** ./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=style&index=0&id=bd95f63c&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Tabs/Tabs.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/Header/Header.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Title/Title.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/MainDocument/MainDocument.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/models/TableItem/TableItem.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/DocumentEditor/DocumentEditor.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/TableDocument/TableDocument.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/models/MainNested/MainNested.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Tabs/Tabs.vue?vue&type=template&id=1820a9a3&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/Header/Header.vue?vue&type=template&id=5e58b760&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Title/Title.vue?vue&type=template&id=1e506a24&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib/index.js??clonedRuleSet-1[0].rules[0].use!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/MainDocument/MainDocument.vue?vue&type=template&id=03287618&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/models/TableItem/TableItem.vue?vue&type=template&id=74d1c23d&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/DocumentEditor/DocumentEditor.vue?vue&type=template&id=032c40f1&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/TableDocument/TableDocument.vue?vue&type=template&id=7a69891a&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/models/MainNested/MainNested.vue?vue&type=template&id=f6a691b6&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=template&id=5b78fd1e&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=template&id=bd95f63c&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Tabs/Tabs.vue?vue&type=style&index=0&id=1820a9a3&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/Header/Header.vue?vue&type=style&index=0&id=5e58b760&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/Title/Title.vue?vue&type=style&index=0&id=1e506a24&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/MainDocument/MainDocument.vue?vue&type=style&index=0&id=03287618&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&id=032c40f1&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/TableDocument/TableDocument.vue?vue&type=style&index=0&id=7a69891a&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/models/MainNested/MainNested.vue?vue&type=style&index=0&id=f6a691b6&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=style&index=0&id=5b78fd1e&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/mini-css-extract-plugin/dist/loader.js!../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=style&index=0&id=bd95f63c&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
