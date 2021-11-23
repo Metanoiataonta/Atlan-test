@@ -21,7 +21,7 @@ export default {
     name: 'ControlDocument',
     computed: {
         disabled() {
-            return !this.$store.state.form.controlEnabled;
+            return !this.$store.state.doc.controlEnabled;
         },
     },
     methods: {

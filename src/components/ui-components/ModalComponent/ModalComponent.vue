@@ -13,12 +13,14 @@
       <div class="modal__control">
         <button
           class="modal__button modal__button_yes"
+          :disabled="disabled"
           @click="deleteDocument"
         >
           yes
         </button>
         <button
           class="modal__button"
+          :disabled="disabled"
           @click="closeModal"
         >
           no
@@ -30,12 +32,18 @@
 <script>
 export default {
     name: 'ModalComponent',
-
+    computed: {
+        disabled() {
+            return !this.$store.state.doc.controlEnabled;
+        },
+    },
     methods: {
         closeModal() {
             this.$store.commit('toggleModal');
         },
         deleteDocument() {
+            this.$store.commit('toggleControl');
+
             this.$store.commit('deleteDocument');
         },
 
@@ -80,6 +88,14 @@ export default {
 
       &:active {
         box-shadow: 0 0 transparent;
+      }
+
+      &[disabled] {
+        position: relative;
+        top: 2px;
+        left: 3px;
+        box-shadow: none;
+        background-color: #605e5e;
       }
     }
   }

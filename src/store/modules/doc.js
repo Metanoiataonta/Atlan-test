@@ -84,10 +84,12 @@ const doc = {
     ],
 };
 export default {
+
     state: {
         doc,
         docBackUp: JSON.parse(JSON.stringify(doc)),
-
+        controlEnabled: true,
+        showModal: false,
         maxNestedID: undefined,
     },
     getters: {
@@ -102,6 +104,14 @@ export default {
         // },
     },
     mutations: {
+        toggleControl(state) {
+            state.controlEnabled = !state.controlEnabled;
+        },
+        toggleModal(state) {
+            if (state.controlEnabled) {
+                state.showModal = !state.showModal;
+            }
+        },
         setDocData(state, data) {
             state.doc.nested[data.id][data.prop] = data.value;
 
@@ -148,7 +158,7 @@ export default {
                 const changes = [];
                 const commonIndexCurrent = [];
 
-                prevArray.forEach((item, prevIndex) => {
+                prevArray.forEach((item) => {
                     const currIndex = currentArray.findIndex((el) => el.id === item.id);
                     if (currIndex !== -1) {
                         // eslint-disable-next-line guard-for-in
@@ -182,20 +192,38 @@ export default {
                 table: tableDataChanges(current.table, previous.table),
                 nested: nestedDataChanges(current.nested, previous.nested),
             };
+            console.log(state);
             fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
                 method: 'POST',
                 body: JSON.stringify(state.changes),
-            }).then(() => {
-                console.log('complete');
-            }).catch(() => console.error('didnt'));
+            }).then(
+                (response) => {
+                    state.doc.status = response.status;
+                    state.controlEnabled = !state.controlEnabled;
+                    return response.json();
+                })
+                .catch(() => {
+                    console.error('didnt');
+                    state.controlEnabled = !state.controlEnabled;
+                })
+                .then((resp) => console.log(resp));
         },
-        deleteDocument() {
+        deleteDocument(state) {
             fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
                 method: 'DELETE',
 
-            }).then(() => {
-                console.log('complete');
-            }).catch(() => console.error('didnt'));
+            }).then(
+                (response) => {
+                    state.doc.status = response.status;
+                    state.controlEnabled = !state.controlEnabled;
+                    return response.json();
+                },
+            )
+                .then((resp) => console.log(resp))
+                .catch(() => {
+                    console.error('didnt');
+                    state.controlEnabled = !state.controlEnabled;
+                });
         },
 
     },

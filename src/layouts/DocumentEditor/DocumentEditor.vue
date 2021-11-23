@@ -30,7 +30,7 @@ export default {
 
     computed: {
         showModal() {
-            return this.$store.state.form.showModal;
+            return this.$store.state.doc.showModal;
         },
     },
     mounted() {
