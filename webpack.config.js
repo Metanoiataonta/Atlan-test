@@ -51,10 +51,10 @@ const plugins = () => {
     }
     return main;
 };
-
+const mode = process.env.NODE_ENV;
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    mode: 'development',
+    mode: mode,
     entry: ['@babel/polyfill', path.resolve(__dirname, './src/main.js')],
     output: {
         path: path.resolve(__dirname, 'public'),
