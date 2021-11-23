@@ -404,7 +404,7 @@ button[disabled] {
   margin-bottom: 20px;
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=style&index=0&id=bd95f63c&lang=scss&scoped=true& ***!
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ControlDocument/ControlDocument.vue?vue&type=style&index=0&id=502ff44c&lang=scss&scoped=true& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -571,9 +571,9 @@ button[disabled] {
   background-color: #605e5e;
 }
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=style&index=0&id=5b78fd1e&lang=scss&scoped=true& ***!
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./components/ui-components/ModalComponent/ModalComponent.vue?vue&type=style&index=0&id=ef799a54&lang=scss&scoped=true& ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.modal[data-v-5b78fd1e] {
+.modal[data-v-ef799a54] {
   position: fixed;
   top: 0;
   left: 0;
@@ -581,7 +581,7 @@ button[disabled] {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
-.modal__wrapper[data-v-5b78fd1e] {
+.modal__wrapper[data-v-ef799a54] {
   margin: 10% 40%;
   background-color: #fff;
   color: #000;
@@ -590,40 +590,48 @@ button[disabled] {
   -webkit-box-shadow: 10px 10px 30px #000;
           box-shadow: 10px 10px 30px #000;
 }
-.modal__control[data-v-5b78fd1e] {
+.modal__control[data-v-ef799a54] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-.modal__text[data-v-5b78fd1e] {
+.modal__text[data-v-ef799a54] {
   font-size: 30px;
   margin-bottom: 40px;
 }
-.modal__button[data-v-5b78fd1e] {
+.modal__button[data-v-ef799a54] {
   padding: 10px 20px;
 }
-.modal__button_yes[data-v-5b78fd1e] {
+.modal__button_yes[data-v-ef799a54] {
   background-color: darkred;
   -webkit-box-shadow: 2px 3px 1px #620000, 7px 7px 3px rgba(0, 0, 0, 0.7);
           box-shadow: 2px 3px 1px #620000, 7px 7px 3px rgba(0, 0, 0, 0.7);
 }
-.modal__button_yes[data-v-5b78fd1e]:active {
+.modal__button_yes[data-v-ef799a54]:active {
   -webkit-box-shadow: 0 0 transparent;
           box-shadow: 0 0 transparent;
 }
+.modal__button_yes[disabled][data-v-ef799a54] {
+  position: relative;
+  top: 2px;
+  left: 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #605e5e;
+}
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&id=032c40f1&lang=scss&scoped=true& ***!
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/vue-loader/lib/index.js??vue-loader-options!./layouts/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&id=7d075eda&lang=scss&scoped=true& ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.document-editor[data-v-032c40f1] {
+.document-editor[data-v-7d075eda] {
   background-color: #000;
   color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
   min-height: 100vh;
 }
-.document-editor__wrapper[data-v-032c40f1] {
+.document-editor__wrapper[data-v-7d075eda] {
   background-color: rgba(221, 221, 221, 0.2);
   padding: 20px 50px;
   border-radius: 20px;
