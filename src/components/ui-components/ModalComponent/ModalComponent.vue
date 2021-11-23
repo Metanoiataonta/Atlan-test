@@ -11,7 +11,10 @@
         Are you sure?
       </div>
       <div class="modal__control">
-        <button class="modal__button modal__button_yes">
+        <button
+          class="modal__button modal__button_yes"
+          @click="deleteDocument"
+        >
           yes
         </button>
         <button
@@ -32,9 +35,10 @@ export default {
         closeModal() {
             this.$store.commit('toggleModal');
         },
-        handleOutsideClick(e) {
-
+        deleteDocument() {
+            this.$store.commit('deleteDocument');
         },
+
     },
 };
 </script>

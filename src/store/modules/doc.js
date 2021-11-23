@@ -182,6 +182,20 @@ export default {
                 table: tableDataChanges(current.table, previous.table),
                 nested: nestedDataChanges(current.nested, previous.nested),
             };
+            fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
+                method: 'POST',
+                body: JSON.stringify(state.changes),
+            }).then(() => {
+                console.log('complete');
+            }).catch(() => console.error('didnt'));
+        },
+        deleteDocument() {
+            fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
+                method: 'DELETE',
+
+            }).then(() => {
+                console.log('complete');
+            }).catch(() => console.error('didnt'));
         },
 
     },
