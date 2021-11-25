@@ -9,7 +9,7 @@
     <div class="main-document__list">
       <nested-cmp
         v-for="(item, index) in nested"
-        :key="item.id"
+        :key="'Nested_' + item.id"
         :item="item"
         :item-i-d="index"
       />

@@ -184,7 +184,6 @@ export default {
                         changes[currentArray[i].id - 1] = currentArray[i];
                     }
                 }
-                console.log(commonIndexCurrent);
                 return changes;
             };
 

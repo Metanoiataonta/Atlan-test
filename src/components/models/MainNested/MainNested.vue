@@ -3,7 +3,7 @@
     <label
       v-for="(property, name) in itemWithoutID"
 
-      :key="name"
+      :key="name + itemID"
       class="nested__label"
     >
       {{ name }} <span v-if="errorObj[name]"> {{ errorText[name] }}</span>
@@ -22,15 +22,12 @@
       @click="deleteNested(itemID)"
     >
       <svg
-        id="Layer_1"
         height="512px"
         fill="white"
-        version="1.1"
         viewBox="0 0 512 512"
         width="512px"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <path
           d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"
@@ -53,6 +50,7 @@ export default {
             type: Number,
             default: NaN,
         },
+
     },
     emits: ['delete'],
     data() {
@@ -66,10 +64,16 @@ export default {
                 title: 'Enter anything other than a space',
                 price: 'The price is not correct. There should be no more than 2 decimal places. Example "12.34"',
             },
+            regExp: {
+                title: /\S/i,
+                price: /^\d+\.?\d{0,2}$/i,
+            },
         };
     },
     computed: {
-
+        showError() {
+            return this.errorObj.title || this.errorObj.price;
+        },
         itemWithoutID() {
             let keys = Object.keys(this.item);
             const object = {};
@@ -79,9 +83,14 @@ export default {
             return object;
         },
     },
+    watch: {
+        showError() {
+            this.$store.commit('toggleControl');
+        },
+    },
     mounted() {
-        this.checkValue(this.item.title, /\S/i, 'title');
-        this.checkValue(this.item.price, /^\d+\.?\d{0,2}$/i, 'price');
+        this.checkValue(this.item.title, this.regExp.title, 'title');
+        this.checkValue(this.item.price, this.regExp.price, 'price');
     },
     methods: {
         deleteNested() {
@@ -96,10 +105,10 @@ export default {
             const target = e.target;
             switch (target.name) {
             case 'title':
-                this.checkValue(target.value, /\S/i, 'title');
+                this.checkValue(target.value, this.regExp.title, 'title');
                 break;
             case 'price':
-                this.checkValue(target.value, /^\d+\.?\d{0,2}$/i, 'price');
+                this.checkValue(target.value, this.regExp.price, 'price');
                 break;
             }
             if (!this.showError) {
@@ -142,8 +151,8 @@ export default {
 
   &__close {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     background-color: transparent;
     border: none;
     box-shadow: none;

@@ -15,7 +15,6 @@
   </div>
 </template>
 <script>
-import {mapState} from 'vuex';
 
 export default {
     name: 'TableItem',
@@ -38,8 +37,7 @@ export default {
 
     },
     methods: {
-        checkChange(event) {
-            (event.target.checked);
+        checkChange() {
             this.$store.commit('checkBox', this.prop);
         },
     },

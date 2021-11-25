@@ -8,19 +8,21 @@
     </div>
     <div class="table__grid">
       <div
-        v-for="item in columns"
+        v-for="(item, index) in columns"
         :key="item"
         class="table__item"
       >
         {{ item }}
         <div class="table__sort">
           <button
+            :ref="'desc'+index"
             class="table__sort-top"
-            @click="sortBy($event,item, 'inverted')"
+            @click="sortBy($event,item, 'desc')"
           />
           <button
+            :ref="'asc'+index"
             class="table__sort-bottom"
-            @click="sortBy($event,item, 'consistent')"
+            @click="sortBy($event,item, 'asc')"
           />
         </div>
       </div>
@@ -50,7 +52,7 @@ export default {
         return {
             columns: ['Period', 'Foo', 'Bar', 'Start'],
             sortKey: 'Period',
-            sortDirection: 'consistent',
+            sortDirection: 'asc',
             sortedTable: this.$store.state.doc.doc.table,
             lastTarget: undefined,
         };
@@ -68,7 +70,7 @@ export default {
 
     },
     mounted() {
-        this.lastTarget = document.querySelector('.table__sort-bottom');
+        this.lastTarget = this.$refs.asc0[0];
         this.lastTarget.classList.toggle('table__button_active');
     },
     methods: {
@@ -98,7 +100,7 @@ export default {
                     }
                     return 0;
                 });
-                if (direction === 'inverted') {
+                if (direction === 'desc') {
                     mapped.reverse();
                 }
                 this.sortedTable = mapped.map((v) => this.table[v.i]);
