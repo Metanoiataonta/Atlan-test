@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
@@ -55,7 +55,7 @@ const mode = process.env.NODE_ENV;
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: mode,
-    entry: ['@babel/polyfill', path.resolve(__dirname, './src/main.js')],
+    entry: path.resolve(__dirname, './src/main.js'),
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: '[name].[contenthash].js',

@@ -6,7 +6,8 @@
         :key="tab"
         :ref="tab"
         class="tabs__button"
-        @click="openTab($event,tab)"
+        :class="tab === currentTab ? 'tabs_active' : ''"
+        @click="openTab(tab)"
       >
         {{ tab }}
       </button>
@@ -32,20 +33,10 @@ export default {
         };
     },
     mounted() {
-        this.$refs.Main[0].classList.toggle('tabs_active');
     },
     methods: {
-        openTab($event, tab) {
+        openTab(tab) {
             this.currentTab = tab;
-            const targetClassList = $event.target.classList;
-            !targetClassList.contains('tabs_active') ? targetClassList.toggle('tabs_active') : '';
-            this.tabs.forEach((item) => {
-                if (item !== tab) {
-                    const itemClassList = this.$refs[item][0].classList;
-                    (this.$refs, item, this.$refs[item]);
-                    itemClassList.contains('tabs_active') ? itemClassList.toggle('tabs_active') : '';
-                }
-            });
         },
     },
 };

@@ -125,7 +125,7 @@ export default {
             if (!state.maxNestedID) {
                 state.maxNestedID = Math.max(...state.doc.nested.map((item) => item.id), 0) + 1;
             }
-            state.doc.nested.push({id: state.maxNestedID, title: `Nested ${state.maxNestedID}`, price: 0});
+            state.doc.nested.push({title: `Nested ${state.maxNestedID}`, price: 0});
 
             state.maxNestedID++;
         },
@@ -168,6 +168,7 @@ export default {
                                     changes[item.id - 1] = {};
                                 }
                                 changes[item.id - 1][value] = currentArray[currIndex][value];
+                                changes[item.id - 1].id = currIndex+1;
                             }
                         }
                         commonIndexCurrent.push(currIndex);
@@ -191,7 +192,6 @@ export default {
                 table: tableDataChanges(current.table, previous.table),
                 nested: nestedDataChanges(current.nested, previous.nested),
             };
-            console.log(state);
             fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
                 method: 'POST',
                 body: JSON.stringify(state.changes),
