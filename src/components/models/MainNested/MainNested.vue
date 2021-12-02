@@ -1,5 +1,8 @@
 <template>
-  <div class="nested">
+  <div
+    v-if="!item.deleted"
+    class="nested"
+  >
     <label
       v-for="(property, name) in itemWithoutID"
 
@@ -57,8 +60,7 @@ export default {
         return {
 
             errorObj: {
-                title: false,
-                price: false,
+
             },
             errorText: {
                 title: 'Enter anything other than a space',
@@ -67,6 +69,7 @@ export default {
             regExp: {
                 title: /\S/i,
                 price: /^\d+\.?\d{0,2}$/i,
+                other: /-?[0-9]+/i,
             },
         };
     },
@@ -89,13 +92,16 @@ export default {
         },
     },
     mounted() {
+        _.forOwn(this.itemWithoutID, (value, key)=>{
+            this.errorObj[key]=false;
+        });
         this.checkValue(this.item.title, this.regExp.title, 'title');
         this.checkValue(this.item.price, this.regExp.price, 'price');
     },
     methods: {
         deleteNested() {
             if (this.$store.state.doc.doc.nested.length > 0) {
-                this.$store.commit('deleteDocData', this.itemID);
+                this.$store.commit('deleteNested', this.itemID);
             }
         },
         checkValue(value, exp, key) {
@@ -105,14 +111,16 @@ export default {
             const target = e.target;
             switch (target.name) {
             case 'title':
-                this.checkValue(target.value, this.regExp.title, 'title');
+                this.checkValue(target.value, this.regExp.title, target.name);
                 break;
             case 'price':
-                this.checkValue(target.value, this.regExp.price, 'price');
+                this.checkValue(target.value, this.regExp.price, target.name);
                 break;
+            default:
+                this.checkValue(target.value, this.regExp.other, target.name);
             }
             if (!this.showError) {
-                this.$store.commit('setDocData', {
+                this.$store.commit('setNested', {
                     id: this.itemID,
                     prop: target.name,
                     value: target.name === 'title' ? target.value : Number(target.value),
@@ -182,7 +190,7 @@ export default {
   }
 
   &__input {
-    &_error, {
+    &_error {
       border: 4px solid red;
     }
 

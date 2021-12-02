@@ -1,4 +1,5 @@
 import 'core-js';
+
 import Vue from 'vue';
 import Vuex from 'vuex';
 import '@src/index.scss';
@@ -19,10 +20,12 @@ new Vue({
     template: '<document-editor-cmp></document-editor-cmp>',
 });
 
+if (process.env.NODE_ENV === 'development') {
+    window.addEventListener('message', (e) => {
+        if (e.data && typeof e.data === 'string' && e.data.match(/webpackHotUpdate/)) {
+            console.log('hot reload happened');
+            console.clear();
+        }
+    });
+}
 
-window.addEventListener('message', (e) => {
-    if (e.data && typeof e.data === 'string' && e.data.match(/webpackHotUpdate/)) {
-        console.log('hot reload happened');
-        console.clear();
-    }
-});

@@ -6,36 +6,45 @@
     <div class="table__end">
       End: {{ endTime }}
     </div>
-    <div class="table__grid">
-      <div
-        v-for="(item, index) in columns"
-        :key="item"
-        class="table__item"
+
+    <table class="table__main">
+      <tr>
+        <th
+          v-for="(item, index) in columns"
+          :key="item"
+        >
+          <div class="table__item">
+            {{ item }}
+            <div class="table__sort">
+              <button
+                :ref="'desc'+index"
+                class="table__sort-top"
+                :class="sortKey === item && sortDirection === 'desc' ? 'table__button_active' : ''"
+                @click="sortBy($event,item, 'desc')"
+              />
+              <button
+                :ref="'asc'+index"
+                class="table__sort-bottom"
+                :class="sortKey === item && sortDirection === 'asc' ? 'table__button_active' : ''"
+                @click="sortBy($event,item, 'asc')"
+              />
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr
+        v-for="(row,index) in sortedTable"
+        :key="row + index"
       >
-        {{ item }}
-        <div class="table__sort">
-          <button
-            :ref="'desc'+index"
-            class="table__sort-top"
-            @click="sortBy($event,item, 'desc')"
-          />
-          <button
-            :ref="'asc'+index"
-            class="table__sort-bottom"
-            @click="sortBy($event,item, 'asc')"
-          />
-        </div>
-      </div>
-      <template v-for="(row,index) in sortedTable">
-        <table-item-cmp
+        <table-item
           v-for="(prop, key) in row"
           :key="key + index"
           :prop="prop"
           :item-key="key"
           :checked="key === 'period' ? row.check: undefined"
         />
-      </template>
-    </div>
+      </tr>
+    </table>
   </fieldset>
 </template>
 <script>
@@ -46,7 +55,7 @@ import TableItem from '@components/models/TableItem/TableItem.vue';
 export default {
     name: 'TableDocument',
     components: {
-        'table-item-cmp': TableItem,
+        TableItem,
     },
     data() {
         return {
@@ -54,7 +63,7 @@ export default {
             sortKey: 'Period',
             sortDirection: 'asc',
             sortedTable: this.$store.state.doc.doc.table,
-            lastTarget: undefined,
+
         };
     },
 
@@ -70,16 +79,10 @@ export default {
 
     },
     mounted() {
-        this.lastTarget = this.$refs.asc0[0];
-        this.lastTarget.classList.toggle('table__button_active');
+
     },
     methods: {
         sortBy($event, key, direction) {
-            if (this.lastTarget) {
-                this.lastTarget.classList.toggle(`table__button_active`);
-            }
-
-            $event.target.classList.toggle(`table__button_active`);
             const changed = !(key === this.sortKey && direction === this.sortDirection);
             this.lastTarget = $event.target;
             if (changed) {
@@ -120,12 +123,14 @@ export default {
     margin-bottom: 40px;
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: #fff;
+  &__main {
+
     border: 1px solid #fff;
-    grid-gap: 1px;
+    width: 100%;
+     border-collapse: collapse
+  }
+  tr, th, td {
+    border: 1px solid #fff;
   }
 
   &__item {

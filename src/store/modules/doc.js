@@ -1,3 +1,7 @@
+/* eslint-disable require-jsdoc */
+import _ from 'lodash';
+import Vue from 'vue';
+
 const doc = {
     id: 100,
     status: 'Ok',
@@ -87,7 +91,7 @@ export default {
 
     state: {
         doc,
-        docBackUp: JSON.parse(JSON.stringify(doc)),
+        docBackUp: _.cloneDeep(doc),
         controlEnabled: true,
         showModal: false,
         maxNestedID: undefined,
@@ -112,14 +116,22 @@ export default {
                 state.showModal = !state.showModal;
             }
         },
-        setDocData(state, data) {
+        setNested(state, data) {
             state.doc.nested[data.id][data.prop] = data.value;
 
 
             state.doc.nested[data.id][data.prop] = data.value;
         },
-        deleteDocData(state, id) {
-            state.doc.nested.splice(id, 1);
+        deleteNested(state, id) {
+            const item = state.doc.nested[id];
+            const itemID = item.id;
+            _.forOwn(item, (value, key)=>{
+                Vue.delete(item, key);
+            });
+            state.doc.nested[id] = {
+                id: itemID,
+                deleted: true,
+            };
         },
         addNewNested(state) {
             if (!state.maxNestedID) {
@@ -140,58 +152,29 @@ export default {
             state.changes = undefined;
             const current = state.doc;
             const previous = state.docBackUp;
-            const tableDataChanges = (curr, prev) => {
-                const data = [];
-                curr.sort((a, b) => a.period - b.period);
-                prev.sort((a, b) => a.period - b.period);
-                for (let i = 0; i < curr.length; i++) {
-                    if (curr[i].check !== prev[i].check) {
-                        data.push({id: curr[i].id, check: curr[i].check});
-                    }
-                }
-                return data;
-            };
 
-            const nestedDataChanges = (curr, prev) => {
-                const currentArray = [...curr];
-                const prevArray = [...prev];
-                const changes = [];
-                const commonIndexCurrent = [];
-
-                prevArray.forEach((item) => {
-                    const currIndex = currentArray.findIndex((el) => el.id === item.id);
-                    if (currIndex !== -1) {
-                        // eslint-disable-next-line guard-for-in
-                        for (const value in item) {
-                            if (item[value] !== currentArray[currIndex][value]) {
-                                if (!changes[item.id - 1]) {
-                                    changes[item.id - 1] = {};
+            function difference(object, base) {
+                function changes(object, base) {
+                    return _.transform(object, function(result, value, key) {
+                        if ( key !== 'status') {
+                            if (!_.isEqual(value, base[key])) {
+                                result[key] = (_.isObject(value) && _.isObject(base[key])) ? changes(value, base[key]) : value;
+                                if (value.id) {
+                                    result[key].id = value.id;
                                 }
-                                changes[item.id - 1][value] = currentArray[currIndex][value];
-                                changes[item.id - 1].id = currIndex+1;
                             }
                         }
-                        commonIndexCurrent.push(currIndex);
-                    } else {
-                        changes[item.id - 1] = {
-                            id: item.id,
-                            deleted: true,
-                        };
-                    }
-                });
-                for (let i = 0; i < currentArray.length; i++) {
-                    const isCommon = commonIndexCurrent.includes(i);
-                    if (!isCommon) {
-                        changes[currentArray[i].id - 1] = currentArray[i];
-                    }
+                    });
                 }
-                return changes;
-            };
+                return changes(object, base);
+            }
 
-            state.changes = {
-                table: tableDataChanges(current.table, previous.table),
-                nested: nestedDataChanges(current.nested, previous.nested),
-            };
+
+            state.changes = difference(current, previous);
+            _.forOwn(state.changes, (value, key)=>{
+                state.changes[key] = value.filter((elem)=>elem !== null);
+            });
+
             fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
                 method: 'POST',
                 body: JSON.stringify(state.changes),

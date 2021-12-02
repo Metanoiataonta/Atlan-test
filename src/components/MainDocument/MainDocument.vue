@@ -9,7 +9,7 @@
     <div class="main-document__list">
       <nested-cmp
         v-for="(item, index) in nested"
-        :key="'Nested_' + item.id"
+        :key="'Nested_' + index"
         :item="item"
         :item-i-d="index"
       />
@@ -25,6 +25,7 @@
 
 <script>
 import MainNested from '@components/models/MainNested/MainNested.vue';
+import {mapGetters} from 'vuex';
 
 export default {
     name: 'MainDocument',
@@ -34,17 +35,22 @@ export default {
     data() {
         return {};
     },
-    computed: {
-        nested() {
-            return this.$store.getters.getDocData('nested');
-        },
-        totalPrice() {
-            const nestedPrice = this.nested.map((item) => parseFloat(item.price));
+    computed: {...mapGetters(
+        [`getDocData`],
+    ),
+    nested() {
+        return this.getDocData('nested');
+    },
 
-            return [...nestedPrice, 0].reduce((prev, cur) => prev + cur).toFixed(2);
-        },
+    totalPrice() {
+        const existingNested = this.nested.filter((elem)=>!elem.deleted);
+        const nestedPrice = existingNested.map((item) => parseFloat(item.price));
+
+        return [...nestedPrice, 0].reduce((prev, cur) => prev + cur).toFixed(2);
+    },
 
     },
+
     methods: {
         addNewNested() {
             this.$store.commit('addNewNested');

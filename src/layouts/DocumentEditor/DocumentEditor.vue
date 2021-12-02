@@ -36,11 +36,7 @@ export default {
     mounted() {
         document.title = 'Document #' + this.$store.state.doc.doc.id;
     },
-    methods: {
-        dataComparison() {
 
-        },
-    },
 
 };
 </script>

@@ -1,18 +1,20 @@
 <template>
-  <div
-    v-if="itemKey !== 'id' && itemKey !== 'check'"
+  <td v-if="itemKey !== 'id' && itemKey !== 'check'">
+    <div
 
-    class="table__item"
-  >
-    {{ itemKey === 'start' ? new Date(prop * 1000).toDateString() : prop }}
-    <input
-      v-if="itemKey === 'period'"
-      :checked="checked"
-      type="checkbox"
-      :name="itemKey"
-      @change="checkChange"
+
+      class="table__item"
     >
-  </div>
+      {{ itemKey === 'start' ? new Date(prop * 1000).toDateString() : prop }}
+      <input
+        v-if="itemKey === 'period'"
+        :checked="checked"
+        type="checkbox"
+        :name="itemKey"
+        @change="checkChange"
+      >
+    </div>
+  </td>
 </template>
 <script>
 
