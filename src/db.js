@@ -1,4 +1,4 @@
 module.exports = () => {
-    const doc = {};
+    const doc = {100: undefined};
     return {doc};
 };

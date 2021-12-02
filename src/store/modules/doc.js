@@ -118,9 +118,6 @@ export default {
         },
         setNested(state, data) {
             state.doc.nested[data.id][data.prop] = data.value;
-
-
-            state.doc.nested[data.id][data.prop] = data.value;
         },
         deleteNested(state, id) {
             const item = state.doc.nested[id];
@@ -191,7 +188,7 @@ export default {
                 .then((resp) => console.log(resp));
         },
         deleteDocument(state) {
-            fetch('https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc', {
+            fetch(`https://my-json-server.typicode.com/Metanoiataonta/Atlan-test/doc/${state.doc.id}`, {
                 method: 'DELETE',
 
             }).then(
